@@ -7,11 +7,11 @@
 		<link href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' rel = 'stylesheet'/>
 		<title>Kwandyg</title>
 		<b:skin><![CDATA[
-			div#main.main.section{
+			div#main.main.section {
         		margin: 0;
         		pading: 0;
       	}
-      	
+
       	.date-posts {
 	        	display: grid;
 	        	margin: 0 auto;
@@ -24,6 +24,63 @@
       	.preview_image {
 		      width: 250px;
 	        	height: 250px;
+      	}
+
+			@media only screen and (min-width: 0px) and (max-width: 249px) {
+        		* {
+          		display: none;
+        		}
+	    	}
+
+			@media only screen and (min-width: 250px) and (max-width: 499px) {
+      		.message_itself, .separator img {
+      			width: 250px;
+      			height: 250px;
+      		}
+      	}
+
+      	@media only screen and (min-width: 600px) and (max-width: 850px) {
+	        .index .date-posts {
+	          	display: grid;
+	          	width: 520px;
+	          	margin: 0 auto;
+	          	grid-template-columns: repeat(2, 250px);
+	          	grid-column-gap: 20px;
+	          	grid-row-gap: 20px;
+	        	}	
+      	}
+
+      	@media only screen and (min-width: 851px) and (max-width: 1100px) {
+        		.index .date-posts {
+	          	display: grid;
+	          	width: 790px;
+	          	margin: 0 auto;
+	          	grid-template-columns: repeat(3, 250px);
+	          	grid-column-gap: 20px;
+	          	grid-row-gap: 20px;
+        		}
+      	}
+
+     		@media only screen and (min-width: 1101px) and (max-width: 1500px) {
+	      	.index .date-posts {
+          		display: grid;
+          		width: 1060px;
+          		margin: 0 auto;
+          		grid-template-columns: repeat(4, 250px);
+          		grid-column-gap: 20px;
+          		grid-row-gap: 20px;
+        		}
+      	}
+
+      	@media only screen and (min-width: 1501px) {
+	      	.index .date-posts {
+          		display: grid;
+          		width: 1330px;
+          		margin: 0 auto;
+          		grid-template-columns: repeat(5, 250px);
+          		grid-column-gap: 20px;
+          		grid-row-gap: 20px;
+        		}
       	}
 		]]></b:skin>
 	</head>
