@@ -7,6 +7,26 @@
 		<link href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' rel = 'stylesheet'/>
 		<title>Kwandyg</title>
 		<b:skin><![CDATA[
+			header {
+		      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+		      text-align: center;
+		      color: #ffffff;
+		      background-color: #333333;
+		      padding-bottom: 10px;
+      	}
+
+      	.header_title {
+      		margin: 0 auto;
+      	}
+
+      	.header_title h1 {
+      		font-size: 3em;
+      	}
+
+      	.description h2 {
+      		font-size: 1em;
+      	}
+
 			div#main.main.section {
         		margin: 0;
         		pading: 0;
@@ -19,6 +39,8 @@
       	.date-posts {
 	        	display: grid;
 	        	margin: 0 auto;
+         	grid-column-gap: 20px;
+         	grid-row-gap: 20px;
       	}
 
       	.post-outer {
@@ -87,49 +109,37 @@
 	        	.index .date-posts {
 		   	  	display: grid;
 	       		width: 520px;
-	      		margin: 0 auto;
 	      		grid-template-columns: repeat(2, 250px);
-	      		grid-column-gap: 20px;
-	      		grid-row-gap: 20px;
 	        	}	
       	}
 
-      		@media only screen and (min-width: 851px) and (max-width: 1100px) {
+      	@media only screen and (min-width: 851px) and (max-width: 1100px) {
         		.index .date-posts {
-	          		display: grid;
-	          		width: 790px;
-	          		margin: 0 auto;
-	          		grid-template-columns: repeat(3, 250px);
-	          		grid-column-gap: 20px;
-	          		grid-row-gap: 20px;
+	        		display: grid;
+	        		width: 790px;
+	        		grid-template-columns: repeat(3, 250px);
         		}
-      		}
+      	}
 
      		@media only screen and (min-width: 1101px) and (max-width: 1500px) {
-	      		.index .date-posts {
-	          		display: grid;
-          			width: 1060px;
-          			margin: 0 auto;
-          			grid-template-columns: repeat(4, 250px);
-          			grid-column-gap: 20px;
-          			grid-row-gap: 20px;
+	      	.index .date-posts {
+	        		display: grid;
+         		width: 1060px;
+         		grid-template-columns: repeat(4, 250px);
         		}
-      		}
+      	}
 
-	      	@media only screen and (min-width: 1501px) {
-	      		.index .date-posts {
-	          		display: grid;
-          			width: 1330px;
-          			margin: 0 auto;
-          			grid-template-columns: repeat(5, 250px);
-          			grid-column-gap: 20px;
-          			grid-row-gap: 20px;
-        		}
-      		}
+	      @media only screen and (min-width: 1501px) {
+	      	.index .date-posts {
+	        		display: grid;
+         		width: 1330px;
+         		grid-template-columns: repeat(5, 250px);
+	      	}
+      	}
 		]]></b:skin>
 	</head>
 
-	<body expr:class = 'data:blog.pageType'>
+	<body expr:class = 'data:blog.pageType' id='ratata'>
 		<b:if cond = 'data:blog.pageType == &quot;error_page&quot;'>
 		   <div class = 'errorPage'>
 		      <span>
@@ -137,7 +147,12 @@
 		      </span>
 		   </div>
 		</b:if>
-		
+
+		<header>
+				<div class='header_title'><h1>Header</h1></div>
+				<div class='description'><h2>Description</h2></div>
+		</header>
+
 		<b:section class='main' id='main' maxwidgets='' showaddelement='yes'>
 			<b:widget id='Blog1' locked='true' title='blog_messages' type='Blog'>
 				<b:widget-settings>
