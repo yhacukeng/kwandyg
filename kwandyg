@@ -7,6 +7,81 @@
 		<link href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' rel = 'stylesheet'/>
 		<title>Kwandyg</title>
 		<b:skin><![CDATA[
+			div#main.main.section {
+        		margin: 0;
+        		pading: 0;
+      	}
+
+      	.date-posts {
+	        	display: grid;
+	        	margin: 0 auto;
+      	}
+
+      	.post-outer {
+	        	margin: 0 auto;
+      	}
+
+      	.preview_image {
+		      width: 250px;
+	        	height: 250px;
+      	}
+
+			@media only screen and (min-width: 0px) and (max-width: 249px) {
+        		* {
+          		display: none;
+        		}
+	    	}
+
+			@media only screen and (min-width: 250px) and (max-width: 499px) {
+      		.message_itself, .separator img {
+      			width: 250px;
+      			height: 250px;
+      		}
+      	}
+
+      	@media only screen and (min-width: 600px) and (max-width: 850px) {
+	        .index .date-posts {
+	          	display: grid;
+	          	width: 520px;
+	          	margin: 0 auto;
+	          	grid-template-columns: repeat(2, 250px);
+	          	grid-column-gap: 20px;
+	          	grid-row-gap: 20px;
+	        	}	
+      	}
+
+      	@media only screen and (min-width: 851px) and (max-width: 1100px) {
+        		.index .date-posts {
+	          	display: grid;
+	          	width: 790px;
+	          	margin: 0 auto;
+	          	grid-template-columns: repeat(3, 250px);
+	          	grid-column-gap: 20px;
+	          	grid-row-gap: 20px;
+        		}
+      	}
+
+     		@media only screen and (min-width: 1101px) and (max-width: 1500px) {
+	      	.index .date-posts {
+          		display: grid;
+          		width: 1060px;
+          		margin: 0 auto;
+          		grid-template-columns: repeat(4, 250px);
+          		grid-column-gap: 20px;
+          		grid-row-gap: 20px;
+        		}
+      	}
+
+      	@media only screen and (min-width: 1501px) {
+	      	.index .date-posts {
+          		display: grid;
+          		width: 1330px;
+          		margin: 0 auto;
+          		grid-template-columns: repeat(5, 250px);
+          		grid-column-gap: 20px;
+          		grid-row-gap: 20px;
+        		}
+      	}
 		]]></b:skin>
 	</head>
 
@@ -73,7 +148,7 @@
 				  <div class='post hentry uncustomized-post-template' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
 				    <b:if cond='data:post.title'>
 				      <h3 class='post-title entry-title' itemprop='name'>
-				        <b:if cond='data:post.link or (data:post.url and data:blog.url != data:post.url) || data:blog.pageType == &quot;archive&quot;'>
+				        <b:if cond='data:post.link or (data:post.url and data:blog.url != data:post.url) OR data:blog.pageType == &quot;archive&quot;'>
 				          <h2 class='preview_header'>
 				            <span class='color-hover'>
 				              <a expr:href='data:post.link ? data:post.link : data:post.url'>
@@ -100,7 +175,7 @@
 				    </b:if>
 
 				    <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' expr:itemprop='(data:blog.metaDescription ? &quot;&quot; : &quot;description &quot;) + &quot;articleBody&quot;'>
-				      <b:if cond='data:blog.pageType != &quot;index&quot;'>
+				      <b:if cond='data:blog.pageType != &quot;index&quot; AND data:blog.pageType != &quot;archive&quot;'>
 				        <div class='message_itself'>
 				          <h1 class='inner_header'>
 				            <data:post.title/>
