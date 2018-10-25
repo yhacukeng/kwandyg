@@ -7,12 +7,20 @@
 		<link href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' rel = 'stylesheet'/>
 		<title>Kwandyg</title>
 		<b:skin><![CDATA[
+			* {
+				box-sizing: padding-box;
+			}
+
 			header {
 		      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 		      text-align: center;
 		      color: #ffffff;
-		      background-color: #333333;
+		      background-color: #555555;
 		      padding-bottom: 10px;
+      	}
+
+      	.header_wrapper {
+      		padding: 10px 0;
       	}
 
       	.header_title {
@@ -21,6 +29,15 @@
 
       	.header_title h1 {
       		font-size: 3em;
+      	}
+
+      	.header_title h1  a {
+      		text-decoration: none;
+      		color: #ffffff;
+      	}
+
+      	.header_title h1  a:hover {
+      		color: cyan;
       	}
 
       	.description h2 {
@@ -48,7 +65,8 @@
       	}
 
       	.preview_header {
-      		padding: 4px 0;
+      		padding: 4px 0 3px 0;
+      		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
       	}
 
       	.preview_header, .preview_labels {
@@ -139,7 +157,7 @@
 		]]></b:skin>
 	</head>
 
-	<body expr:class = 'data:blog.pageType' id='ratata'>
+	<body expr:class = 'data:blog.pageType'>
 		<b:if cond = 'data:blog.pageType == &quot;error_page&quot;'>
 		   <div class = 'errorPage'>
 		      <span>
@@ -149,8 +167,10 @@
 		</b:if>
 
 		<header>
-				<div class='header_title'><h1>Header</h1></div>
+			<div class='header_wrapper'>
+				<div class='header_title'><h1><a href='/'>Header</a></h1></div>
 				<div class='description'><h2>Description</h2></div>
+			</div>
 		</header>
 
 		<b:section class='main' id='main' maxwidgets='' showaddelement='yes'>
