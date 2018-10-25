@@ -44,6 +44,56 @@
       		font-size: 1em;
       	}
 
+      	body {
+      		padding-bottom: 190px;
+      	}
+
+      	.footer {
+      		border-top: 1px solid rgba(0, 0, 0, 0.2);
+      		position: absolute;
+      		bottom: 0;
+      		width: 100%;
+      		height: 190px;
+      		background-color: #555555;
+      	}
+
+      	.icons_container {
+      		padding: 10px 0;
+      		width: 540px;
+         	margin: 0 auto;
+         	display: grid;
+         	grid-template-columns: 90px 90px 90px 90px 90px 90px;
+         	grid-column-gap: 0px;
+         	grid-row-gap: 10px;
+      	}
+
+      	.icon-item {
+      		display: inline;
+        		margin: 1px;
+      	}
+
+      	.fa {
+	      	padding: 20px;
+	      	color: #ffffff;
+	      	font-size: 20px;
+	      	width: 25px;
+	      	text-align: center;
+	      	text-decoration: none;
+	      	background-color: rgba(0, 0, 0, 0.1);
+	      	border-radius: 50%;
+      	}
+
+      	.fa:hover {
+      		background-color: #222222;
+      	}
+
+      	.coryright {
+      		padding: 10px 0;
+      		font-size: 0.75em;
+      		text-align: center;
+      		color: #ffffff;
+      	}
+
 			div#main.main.section {
         		margin: 0;
         		pading: 0;
@@ -117,11 +167,43 @@
 	    	}
 
 			@media only screen and (min-width: 250px) and (max-width: 499px) {
-      			.message_itself, .separator img {
-	      			width: 250px;
-      				height: 250px;
-      			}
+      		.message_itself, .separator img {
+	      		width: 250px;
+      			height: 250px;
       		}
+      	}
+
+      	@media only screen and (min-width: 250px) and (max-width: 599px) {
+      		body {
+      			padding-bottom: 330px;
+      		}
+
+      		.footer {
+	      		height: 330px;
+	      	}
+
+      		.icons_container {
+	      		padding: 10px 0;
+	      		width: 270px;
+	         	grid-template-columns: 90px 90px 90px;
+      		}
+
+      		.icon-item {
+      			display: inline;
+        			margin: 1px;
+      		}
+
+      		.fa {
+		      	padding: 20px;
+		      	color: #ffffff;
+		      	font-size: 20px;
+		      	width: 25px;
+		      	text-align: center;
+		      	text-decoration: none;
+		      	background-color: rgba(0, 0, 0, 0.1);
+		      	border-radius: 50%;
+      		}
+      	}
 
       	@media only screen and (min-width: 600px) and (max-width: 850px) {
 	        	.index .date-posts {
@@ -158,6 +240,13 @@
 	</head>
 
 	<body expr:class = 'data:blog.pageType'>
+		<header>
+			<div class='header_wrapper'>
+				<div class='header_title'><h1><a href='/'>Header</a></h1></div>
+				<div class='description'><h2>Description</h2></div>
+			</div>
+		</header>
+
 		<b:if cond = 'data:blog.pageType == &quot;error_page&quot;'>
 		   <div class = 'errorPage'>
 		      <span>
@@ -165,13 +254,6 @@
 		      </span>
 		   </div>
 		</b:if>
-
-		<header>
-			<div class='header_wrapper'>
-				<div class='header_title'><h1><a href='/'>Header</a></h1></div>
-				<div class='description'><h2>Description</h2></div>
-			</div>
-		</header>
 
 		<b:section class='main' id='main' maxwidgets='' showaddelement='yes'>
 			<b:widget id='Blog1' locked='true' title='blog_messages' type='Blog'>
@@ -267,5 +349,25 @@
 				</b:includable>
 			</b:widget>
 		</b:section>
+
+		<footer class='footer'>
+			<div class='icons_container'>
+			   <div class='icon-item'><a class='fa fa-facebook' href='#'/></div>
+			   <div class='icon-item'><a class='fa fa-vk' href='#'/></div>
+			   <div class='icon-item'><a class='fa fa-twitter' href='#'/></div>
+			   <div class='icon-item'><a class='fa fa-instagram' href='#'/></div>
+			   <div class='icon-item'><a class='fa fa-pinterest' href='#'/></div>
+			   <div class='icon-item'><a class='fa fa-dribbble' href='#'/></div>
+			   <div class='icon-item'><a class='fa fa-behance' href='#'/></div>
+			   <div class='icon-item'><a class='fa fa-flickr' href='#'/></div>
+			   <div class='icon-item'><a class='fa fa-google-plus' href='#'/></div>
+			   <div class='icon-item'><a class='fa fa-youtube' href='#'/></div>
+			   <div class='icon-item'><a class='fa fa-linkedin' href='#'/></div>
+			   <div class='icon-item'><a class='fa fa-github' href='#'/></div>
+			</div>
+			<div class='coryright'>
+				<span>Copyright © 2018 Kwandyg. Designed By Yhacukeng.</span>
+			</div>
+		</footer>
 	</body>
 </html>
