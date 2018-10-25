@@ -72,6 +72,11 @@
         		margin: 1px;
       	}
 
+      	a.fa {
+      		position: relative;
+      		left: 11px;
+      	}
+
       	.fa {
 	      	padding: 20px;
 	      	color: #ffffff;
